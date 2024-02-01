@@ -1,6 +1,6 @@
 import sqlite3
 
-def fetch_balance_by_email_and_password(email, password):
+def Check_balance(email, password):
     # Connect to the SQLite database
     conn = sqlite3.connect('bank_database.db')
 
@@ -21,6 +21,6 @@ def fetch_balance_by_email_and_password(email, password):
     conn.close()
 
 # Example usage
-fetch_balance_by_email_and_password('jane.smith@email.com', 'janeSmith@123')
-fetch_balance_by_email_and_password("john.doe@email.com",'johnDoe@123')
+Check_balance('jane.smith@email.com', 'janeSmith@123')
+Check_balance("john.doe@email.com",'johnDoe@123')
 

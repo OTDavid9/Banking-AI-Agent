@@ -3,7 +3,7 @@ import json
 
 question = input("Enter your query here : ")
 
-def knowledge_base(cognitive_query=question):
+def knowledge_base(enquiry_query=question):
     
      # Azure Cognitive Search configuration
     search_service_name = "tunji-ai-search-3"
@@ -16,7 +16,7 @@ def knowledge_base(cognitive_query=question):
     headers = {"Content-Type": "application/json", "api-key": search_api_key}
 
     # Make a request to Azure Cognitive Search
-    response = requests.get(search_url, headers=headers, params={"search": cognitive_query})
+    response = requests.get(search_url, headers=headers, params={"search": enquiry_query})
 
     # Return the response from Azure Cognitive Search
     return  json.dumps(response.json()['value'][0]['content'])
