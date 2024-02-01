@@ -3,18 +3,18 @@ tools_listing = [
         {
             "type": "function",
             "function": {
-                "name": "search_cognitive_service",
+                "name": "knowledge_base",
                 "description": "Get response from the context in search_cognitive_service, if the user ask about information from document",
                 "parameters": {
                     "type": "object",
                     "properties": {
-                        "cognitive_query": {
+                        "enquiry_query": {
                             "type": "string",
                             "description": "User question about information in cognitive service ",
                         },
                         
                     },
-                    "required": ["cognitive_query"],
+                    "required": ["enquiry_query"],
                 },
             }
         },
@@ -22,7 +22,7 @@ tools_listing = [
         {
             "type": "function",
             "function": {
-                "name": "url_database",
+                "name": "Check_balance",
                 "description": "Get response from the function url_database when the user ask about ALAT.",
                 "parameters": {
                     "type": "object",
@@ -55,8 +55,31 @@ tools_listing = [
                 },
             }
         },
+{
+        "type": "function",
+        "function": {
+            "name": "top_up_airtime",
+            "description": "This tool should be used to purchase airtime",
+            "parameters": {
+                "type": "object",
+                "properties": {
+                    "service_provider": {
+                        "type": "string",
+                        "description": "This parameter takes in the service provider you would like to buy airtime from, it returns an error if the service provider is not available",
+                    },
 
-         {
+                    "amount": {
+                        "type": "string",
+                        "description": "This parameter takes in the amount of airtime the user would like to buy",
+                    },
+
+                },
+                "required": ["service_provider","amount"],
+            },
+        }
+ },
+
+  {
         "type": "function",
         "function": {
             "name": "handle_unknown_query",
@@ -73,14 +96,5 @@ tools_listing = [
             },
         }
     },
+    
     ]
-
-
-
-
-
-
-
-
-
-
