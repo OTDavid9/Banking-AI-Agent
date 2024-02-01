@@ -18,7 +18,25 @@ tools_listing = [
                 },
             }
         },
-        
+
+        {
+            "type": "function",
+            "function": {
+                "name": "url_database",
+                "description": "Get response from the function url_database when the user ask about ALAT.",
+                "parameters": {
+                    "type": "object",
+                    "properties": {
+                        "url_query": {
+                            "type": "string",
+                            "description": "User question information in relating to ALAT e.g what is  ALAT?"
+                        },
+                        
+                    },
+                    "required": ["url_query"],
+                },
+            }
+        },
         {
             "type": "function",
             "function": {
