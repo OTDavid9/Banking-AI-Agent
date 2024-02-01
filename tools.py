@@ -38,6 +38,8 @@ tools_listing = [
             }
         },
 
+        
+
          {
         "type": "function",
         "function": {
@@ -55,6 +57,31 @@ tools_listing = [
             },
         }
     },
+
+ {
+        "type": "function",
+        "function": {
+            "name": "top_up_airtime",
+            "description": "This tool should be used to purchase airtime",
+            "parameters": {
+                "type": "object",
+                "properties": {
+                    "service_provider": {
+                        "type": "string",
+                        "description": "This parameter takes in the service provider you would like to buy airtime from, it returns an error if the service provider is not available",
+                    },
+
+                    "amount": {
+                        "type": "string",
+                        "description": "This parameter takes in the amount of airtime the user would like to buy",
+                    },
+
+                },
+                "required": ["service_provider","amount"],
+            },
+        }
+ }
+    
     ]
 
 
