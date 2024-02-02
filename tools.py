@@ -31,10 +31,6 @@ tools_listing = [
                             "type": "string",
                             "description": "User's email stored in the databse and checking account balance e.g 'johnDoe@gmail.com' "
                         },
-                        "password": {
-                            "type": "string",
-                            "description": "User's password stored in database e.g 'johnDoe@123' "
-                        },
                         
                     },
                     "required": ["email", "amount"],
