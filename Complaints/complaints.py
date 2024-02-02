@@ -1,6 +1,4 @@
 
-
-
 # def complaints(complaints_query=question):
     
 #     complaints_url = "https://drive.google.com/file/d/1AlUXgJoRmNqQJr9tLE0mr5DazH5Bp7ez/view?usp=drive_link"

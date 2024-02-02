@@ -4,13 +4,13 @@ tools_listing = [
             "type": "function",
             "function": {
                 "name": "knowledge_base",
-                "description": "Get response from the context in search_cognitive_service, if the user ask about information from document",
+                "description": "Get response from the context in 'knowledge_base', if the user ask about information from document",
                 "parameters": {
                     "type": "object",
                     "properties": {
                         "enquiry_query": {
                             "type": "string",
-                            "description": "User question about information in cognitive service ",
+                            "description": "User question about information in knowledge base (ALAT, Loans, USSD) e.g What is ALAT ",
                         },
                         
                     },
@@ -23,17 +23,21 @@ tools_listing = [
             "type": "function",
             "function": {
                 "name": "Check_balance",
-                "description": "Get response from the function url_database when the user ask about ALAT.",
+                "description": "This tool is used to check customer account balance, using the function 'Check_balance' ",
                 "parameters": {
                     "type": "object",
                     "properties": {
-                        "url_query": {
+                        "email": {
                             "type": "string",
-                            "description": "User question information in relating to ALAT e.g what is  ALAT?"
+                            "description": "User's email stored in the databse and checking account balance e.g 'johnDoe@gmail.com' "
+                        },
+                        "password": {
+                            "type": "string",
+                            "description": "User's password stored in database e.g 'johnDoe@123' "
                         },
                         
                     },
-                    "required": ["url_query"],
+                    "required": ["email", "amount"],
                 },
             }
         },
