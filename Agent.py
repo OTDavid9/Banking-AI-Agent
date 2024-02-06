@@ -5,9 +5,10 @@ import os
 import json
 from dotenv import load_dotenv
 load_dotenv()
-AZURE_OPENAI_API_KEY = "1c5f09b472cd44cf8d28542f9ae25c03"
-AZURE_OPENAI_ENDPOINT = "https://tunji-service.openai.azure.com/openai/deployments/tunji-model/chat/completions?api-version=2023-07-01-preview"
-AZURE_OPENAI_API_VERSION = "2023-07-01-preview"
+
+AZURE_OPENAI_API_KEY = os.getenv("azure_openai_api_key") 
+AZURE_OPENAI_ENDPOINT = os.getenv("azure_openai_endpoint")
+AZURE_OPENAI_API_VERSION =  os.getenv("2azure_openai_api_version")
 
 
 azure_openai_endpoint = AZURE_OPENAI_ENDPOINT

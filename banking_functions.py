@@ -1,6 +1,10 @@
 import sqlite3
 import json
 import requests
+import os
+from dotenv import load_dotenv
+load_dotenv()
+
 
 def Check_balance(email):
     # Connect to the SQLite database
@@ -22,7 +26,7 @@ def Check_balance(email):
 
 def complaints(complaints_query):
     
-    complaints_url = "https://drive.google.com/file/d/1AlUXgJoRmNqQJr9tLE0mr5DazH5Bp7ez/view?usp=drive_link"
+    complaints_url = "https://wemabank.com/complaints"
 
     # Return the response from Azure Cognitive Search
     return  json.dumps({"Lodge your complaint using this link":complaints_url, "complaints_query": complaints_query})
@@ -30,9 +34,9 @@ def complaints(complaints_query):
 def knowledge_base(enquiry_query):
     
      # Azure Cognitive Search configuration
-    search_service_name = "tunji-ai-search-3"
-    search_api_key = "nsWEQDTKDiP9ZTXpt3z6Z2nm7IAtcvCyhKOk6Fgh5YAzSeDNAPiy"
-    index_name = "yes"
+    search_service_name = os.getenv('search_service_name')
+    search_api_key = os.getenv('search_api_key')
+    index_name = os.getenv('index_name')
     # api_version = "2023-11-01"
     api_version = "2023-07-01-preview"
 

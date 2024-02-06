@@ -1,7 +1,7 @@
 import sqlite3
 
 # Connect to the SQLite database (creates a new file if it doesn't exist)
-conn = sqlite3.connect('bank_database2.db')
+conn = sqlite3.connect('bank_database2db')
 
 # Create a cursor object to execute SQL queries
 cursor = conn.cursor()
