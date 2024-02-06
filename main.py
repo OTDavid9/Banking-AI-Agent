@@ -77,6 +77,8 @@ def top_up_airtime(service_provider= question, amount=question):
         return json.dumps("The transaction request was successful")
     else:
         return json.dumps("The Service provider you chose is not available")
+    
+
 
 def handle_unknown_query(unknown_query=question):
     """
@@ -88,7 +90,27 @@ def handle_unknown_query(unknown_query=question):
     return json.dumps({'unknown': str("'I CAN'T ANSWER")})
 
 
+def check_token(email,token):
+     # Connect to the SQLite database
+    conn = sqlite3.connect('bank_database.db')
 
+    # Create a cursor object to execute SQL queries
+    cursor = conn.cursor()
+
+    # Fetch the account balance based on the email
+    cursor.execute("SELECT * FROM customers WHERE email = ?", (email,))
+    user = cursor.fetchone()
+
+    # Check if the email exists in the database
+    if user is not None:
+        token2 = user[0][-1]
+        if token2 == token:
+            return json.dumps(f"The authentication was successful")
+        else:
+            return json.dumps(f"The authentication was not successful maybe your token is incorrect")
+    else:
+        return json.dumps(f"Invalid email: {email}")
+    
 
 
 
@@ -123,7 +145,7 @@ def run_conversation():
             "Check_balance":Check_balance,
             "knowledge_base":knowledge_base,
             "top_up_airtime": top_up_airtime,
-            None: handle_unknown_query
+            "handle_unknown_query": handle_unknown_query
 
             
         }  # Available functions

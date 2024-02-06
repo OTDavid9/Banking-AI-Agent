@@ -96,5 +96,29 @@ tools_listing = [
             },
         }
     },
+
+    {
+        "type": "function",
+        "function": {
+            "name": "check_token",
+            "description": "This tool should be used for authentication, it checks the token given by a user against a token in a database",
+            "parameters": {
+                "type": "object",
+                "properties": {
+                    "email": {
+                        "type": "string",
+                        "description": "This parameter takes in the email of the user",
+                    },
+
+                    "token": {
+                        "type": "string",
+                        "description": "This parameter takes in the corresponding token needed for authentication",
+                    },
+
+                },
+                "required": ["email","token"],
+            },
+        }
+ },
     
     ]
