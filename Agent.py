@@ -8,7 +8,7 @@ load_dotenv()
 
 AZURE_OPENAI_API_KEY = os.getenv("azure_openai_api_key") 
 AZURE_OPENAI_ENDPOINT = os.getenv("azure_openai_endpoint")
-AZURE_OPENAI_API_VERSION =  os.getenv("2azure_openai_api_version")
+AZURE_OPENAI_API_VERSION =  os.getenv("azure_openai_api_version")
 
 
 azure_openai_endpoint = AZURE_OPENAI_ENDPOINT
